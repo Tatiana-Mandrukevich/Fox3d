@@ -14,14 +14,14 @@ public class GrowthDueFoxStrategy : IStrategy
     
     public void Tick()
     {
-        // Проверяем, есть ли лиса рядом
+        // Проверка, есть ли лиса рядом
         var foundColliders = Physics.OverlapSphere(_wildberries.transform.position, _radius);
         foreach (var collider in foundColliders)
         {
             if (collider.CompareTag("Fox"))
             {
                 _wildberries.Grow();
-                break; // Вызываем рост один раз за тик, если есть хотя бы одна лиса
+                break;
             }
         }
     }

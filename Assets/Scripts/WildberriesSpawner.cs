@@ -27,7 +27,7 @@ public class WildberriesSpawner : MonoBehaviour
     {
         for (int i = 0; i < SpawnPoints.Length; i++)
         {
-            // Проверяем, есть ли активный berry на этом spawnPoint и нет ли лисы рядом
+            // Проверка, есть ли активный berry на этом spawnPoint и нет ли лисы рядом
             if (!HasBerryAtSpawnPoint(SpawnPoints[i]) && !HasFoxAtSpawnPoint(SpawnPoints[i]))
             {
                 // Создаем новый berry
@@ -40,8 +40,7 @@ public class WildberriesSpawner : MonoBehaviour
     
     private bool HasBerryAtSpawnPoint(Transform spawnPoint)
     {
-        // Проверяем, есть ли активный berry на позиции spawnPoint
-        // (используем небольшой радиус для проверки)
+        // Проверка, есть ли активный berry на позиции spawnPoint
         const float detectionRadius = 0.1f;
         
         foreach (var berry in _berries)
@@ -60,7 +59,6 @@ public class WildberriesSpawner : MonoBehaviour
 
     private bool HasFoxAtSpawnPoint(Transform spawnPoint)
     {
-        // Проверяем, есть ли лиса рядом
         var foundColliders = Physics.OverlapSphere(spawnPoint.position, _radius);
         foreach (var collider in foundColliders)
         {
