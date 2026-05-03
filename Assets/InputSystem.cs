@@ -11,6 +11,6 @@ public class InputSystem : MonoBehaviour
     private void Update()
     {
         IsSelectableButtonClicked = Input.GetKey(KeyCode.E);
-        IsInteractButtonClicked = Input.GetKey(KeyCode.F);
+        IsInteractButtonClicked = Input.GetKey(KeyCode.R);
     }
 }

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Spawner : MonoBehaviour
+public class MushroomsSpawner : MonoBehaviour
 {
     public MonoPooled Prefab;
     

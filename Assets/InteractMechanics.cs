@@ -16,7 +16,7 @@ public class InteractMechanics : MonoBehaviour
 
     private void Update()
     {
-        if (InputSystem.IsSelectableButtonClicked)
+        if (InputSystem.IsInteractButtonClicked)
         {
             FindInteractObjects();
         }
