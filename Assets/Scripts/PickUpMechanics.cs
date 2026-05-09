@@ -2,15 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class PickUpMechanics : MonoBehaviour
 {
-    public InputSystem InputSystem;
     public Transform searchCenter;
     public Transform attachPoint;
     public float radius;
     public Transform GetCollectableItem => _collectableItem;
 
+    [Inject]
+    private InputSystem InputSystem;
     private Transform _collectableItem;
 
     private void OnDrawGizmosSelected()
@@ -28,7 +30,7 @@ public class PickUpMechanics : MonoBehaviour
         }
     }
 
-    private void Collect()
+    public void Collect()
     {
         Collider[] colliders = Physics.OverlapSphere(searchCenter.position, radius);
         foreach (Collider collider in colliders)

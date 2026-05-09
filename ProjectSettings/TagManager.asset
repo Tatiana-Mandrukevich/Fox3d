@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Food
   - Fox
+  - ship
+  - asteroid
+  - Wildberry
+  - Mushroom
+  - Rabbit
   layers:
   - Default
   - TransparentFX

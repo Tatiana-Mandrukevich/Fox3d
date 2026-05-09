@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8555843393688075893}
   m_Layer: 0
   m_Name: Mushroom
-  m_TagString: Food
+  m_TagString: Mushroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

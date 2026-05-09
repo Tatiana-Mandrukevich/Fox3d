@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1634456258310981759}
   m_Layer: 0
   m_Name: Wildberry
-  m_TagString: Food
+  m_TagString: Wildberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b9c3945d04846a790d326b22309586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growingDelay: 3
 --- !u!114 &2881433236967316728
 MonoBehaviour:
   m_ObjectHideFlags: 0
