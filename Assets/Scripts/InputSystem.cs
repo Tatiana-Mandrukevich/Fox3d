@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class InputSystem : MonoBehaviour
+public class InputSystem : ITickable
 {
     public bool IsSelectableButtonClicked;
     public bool IsInteractButtonClicked;
@@ -12,5 +13,10 @@ public class InputSystem : MonoBehaviour
     {
         IsSelectableButtonClicked = Input.GetKey(KeyCode.E);
         IsInteractButtonClicked = Input.GetKey(KeyCode.R);
+    }
+
+    public void Tick()
+    {
+        Update();
     }
 }

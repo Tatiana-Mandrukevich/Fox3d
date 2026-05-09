@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Wildberries : MonoPooled
 {
-    public float growingDelay;
-    
+    private float growingDelay = 3;
+    private float reductionDelay = 2;
     private Collectable _collectable;
     private float _currentTime;
     private IStrategy _growthDueFoxStrategy;
@@ -30,6 +30,7 @@ public class Wildberries : MonoPooled
         if (_currentTime >= growingDelay) return;
         
         _currentTime += Time.deltaTime;
+        
         float scale = Mathf.Min(_currentTime / growingDelay, 1f);
         transform.localScale = new Vector3(scale, scale, scale);
         
@@ -37,5 +38,26 @@ public class Wildberries : MonoPooled
         {
             _collectable.SetCanCollect(true);
         }
+    }
+
+    public void Reduction()
+    {
+        if (_currentTime >= reductionDelay) return;
+
+        _currentTime += Time.deltaTime;
+
+        float scale = 1f - Mathf.Clamp01(_currentTime / reductionDelay);
+        transform.localScale = new Vector3(scale, scale, scale);
+
+        if (_currentTime >= reductionDelay)
+        {
+            _collectable.SetCanCollect(false);
+            Destroy(gameObject); 
+        }
+    }
+
+    public void StartReduction()
+    {
+        _currentTime = 0f; // Сбрасываем счетчик перед началом уменьшения
     }
 }
